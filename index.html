@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Text Toolkit</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <header>
+        <h1>AI Text Toolkit</h1>
+        <p>Paste text. Pick a mode. Get results.</p>
+    </header>
+
+    <main>
+        <div class="columns">
+            <div class="input-side">
+                <textarea name="" id="text-input" class="input-text" placeholder="Paste Your Text Here" maxlength="3000"></textarea>
+                <span id="char-count"></span>
+
+                <select name="" id="mode-select">
+                    <option value="summarize">Summarize</option>
+                    <option value="fix-grammar">Fix Grammar</option>
+                    <option value="rewrite-formal">Rewrite Formal</option>
+                    <option value="rewrtie-casual">Rewrite Casual</option>
+                    <option value="translate">Translate</option>
+                    <option value="extract-points">Extract Points</option>
+                </select>
+
+                <button id="run-btn">Run</button>
+                <input type="password" id="api-key" placeholder="Paste Your Anthropic API key">
+            </div>
+
+            <div class="output-side">
+                <div class="row-flex">
+                    <h2>Output</h2>
+                    <div id="loader">Thinking...</div>
+                </div>
+
+                <div id="output">
+                    Your result will appear here.
+                </div>
+
+                <button id="copy-btn">Copy</button>
+
+                <div id="error-msg" hidden></div>
+            </div>
+        </div>
+        
+    </main>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
