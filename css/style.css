@@ -161,6 +161,10 @@ header p {
     color: var(--text-secondary);
 }
 
+#loader.hidden{
+    display: none;
+}
+
 #output {
     background: var(--bg-secondary);
     color: var(--text-secondary);
@@ -184,6 +188,7 @@ header p {
     padding: 8px 0;
     align-self: flex-end;
     transition: var(--transition);
+    cursor: pointer;
 }
 
 #copy-btn:hover {

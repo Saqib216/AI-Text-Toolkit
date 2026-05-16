@@ -15,7 +15,7 @@
     <main>
         <div class="columns">
             <div class="input-side">
-                <textarea name="" id="text-input" class="input-text" placeholder="Paste Your Text Here" maxlength="3000"></textarea>
+                <textarea name="text-box" id="text-input" class="input-text" placeholder="Paste Your Text Here" maxlength="3000"></textarea>
                 <span id="char-count"></span>
 
                 <select name="" id="mode-select">
@@ -27,14 +27,14 @@
                     <option value="extract-points">Extract Points</option>
                 </select>
 
-                <button id="run-btn">Run</button>
                 <input type="password" id="api-key" placeholder="Paste Your Anthropic API key">
+                <button id="run-btn">Run</button>
             </div>
 
             <div class="output-side">
                 <div class="row-flex">
                     <h2>Output</h2>
-                    <div id="loader">Thinking...</div>
+                    <div id="loader" class="hidden">Thinking...</div>
                 </div>
 
                 <div id="output">
@@ -49,6 +49,7 @@
         
     </main>
 
+    <script src="js/config.js"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
