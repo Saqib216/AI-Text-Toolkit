@@ -54,11 +54,11 @@ async function runAI() {
         errorMSG.removeAttribute('hidden');
         return;
     }
-    // if(apiKey == ''){
-    //     errorMSG.innerText = 'Please enter the API key';
-    //     errorMSG.hidden = false;
-    //     return;
-    // }
+    if (apiKeyValue == '') {
+        errorMSG.innerText = 'Please enter the API key';
+        errorMSG.hidden = false;
+        return;
+    }
 
     // Making the run button disabled once clicked, and loader visible
     runBtn.disabled = true;
@@ -80,7 +80,7 @@ async function runAI() {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
-                    "x-goog-api-key": API_KEY
+                    "x-goog-api-key": apiKeyValue
                 },
                 body: JSON.stringify({
                     contents: [
@@ -113,16 +113,29 @@ async function runAI() {
             errorMSG.removeAttribute('hidden');
         }
 
-    } catch (error){
+    } catch (error) {
         errorMSG.innerText = `Error: ${error.message}`;
         errorMSG.removeAttribute('hidden');
     } finally {
         loader.classList.add('hidden');
         runBtn.disabled = false;
     }
-
 }
 
+// Copying the result: adding an event listener to copy btn
+copyBtn.addEventListener('click', (e) => {
+    const textToCopy = output.innerText;
+    if (textToCopy !== 'Your result will appear here.') {
+        navigator.clipboard.writeText(textToCopy);
+        const originalText = copyBtn.innerText;
+        copyBtn.innerText = 'Copied ✓';
+        setTimeout(() => {
+            copyBtn.innerText = originalText;
+        }, 2000);
+    }
+})
+
+// Adding an event listener to run button:
 runBtn.addEventListener("click", (e) => {
     runAI();
 });
