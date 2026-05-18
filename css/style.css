@@ -174,7 +174,7 @@ header p {
     /* top: 50%;
     left: 50%;
     transform: translate(-50%, -50%); */
-    inset: 0; /* Lengendary property for placing an element oon center of page */
+    inset: 0; /* Lengendary property for placing an element on center of the page */
     z-index: 1000;
     background: rgba(0, 0, 0, 0.5);
     width: 100%;
