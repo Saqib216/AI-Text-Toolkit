@@ -148,20 +148,119 @@ header p {
     border-color: var(--accent);
 }
 
+#help-procedure-toggler {
+    align-self: flex-end;
+    font-size: 14px;
+    cursor: pointer;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+    color: #ffffff94;
+    font-weight: 600;
+    border: none;
+    padding: 10px 14px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+}
+
+#help-procedure-toggler:hover {
+    /* text-decoration: underline; */
+    color: white;
+    background: #000000e0;
+}
+
+/* Popover Styling */
+.popover {
+    position: fixed;
+    /* top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); */
+    inset: 0; /* Lengendary property for placing an element oon center of page */
+    z-index: 1000;
+    background: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.popover-procedure {
+    background: #000000;
+    border-radius: 12px;
+    padding: 30px;
+    max-width: 500px;
+    width: 90%;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #999;
+    transition: color 0.2s;
+}
+
+.close-btn:hover {
+    color: #d9d9d9;
+}
+
+.popover-procedure h3 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+}
+
+.steps {
+    padding-left: 20px;
+    line-height: 1.8;
+    margin: 20px 0;
+}
+
+.steps li {
+    margin-bottom: 12px;
+    font-size: 14px;
+}
+
+.steps strong {
+    color: #ff5f6dfa;
+}
+
+.steps a {
+    color: #4285f4;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.steps a:hover {
+    text-decoration: underline;
+}
+
+.note {
+    background: #1c1708;
+    padding: 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: #856404;
+    margin-top: 20px;
+    border-left: 4px solid #ffc107;
+}
+
 .row-flex {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-.row-flex h2 {}
-
 .row-flex #loader {
     font-size: small;
     color: var(--text-secondary);
 }
 
-#loader.hidden{
+#loader.hidden {
     display: none;
 }
 
@@ -177,6 +276,11 @@ header p {
     white-space: pre-wrap;
 }
 
+/* Animation for the output text: */
+#output.fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+}
+
 #copy-btn {
     background: transparent;
     color: var(--accent);
@@ -184,11 +288,17 @@ header p {
     border-radius: var(--border-radius);
     text-align: center;
     display: block;
-    width: 100px;
-    padding: 8px 0;
+    width: 80px;
+    padding: 5px 0;
     align-self: flex-end;
     transition: var(--transition);
     cursor: pointer;
+    transition: var(--transition);
+}
+
+#copy-btn.success {
+    transform: scale(1.04);
+    /* background-color: #530007; */
 }
 
 #copy-btn:hover {
@@ -200,4 +310,17 @@ header p {
     color: var(--error);
     background-color: #ff5f6c3e;
     font-size: small;
+}
+
+/* Animation for the output text when appears: */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }

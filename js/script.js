@@ -10,10 +10,38 @@ const output = document.getElementById('output');
 const copyBtn = document.getElementById('copy-btn');
 const errorMSG = document.getElementById('error-msg');
 
+const helpBtn = document.getElementById('help-procedure-toggler');
+const closeBtn = document.getElementById('close-btn');
+const popover = document.getElementById('popover');
+
 // Adding an event listener to the textarea
 textBox.addEventListener('input', (e) => {
     let textLength = textBox.value.length;
     charCount.innerText = `${textLength}/${maxLengthOfTextBox}`;
+});
+
+// Open popover
+helpBtn.addEventListener('click', () => {
+  popover.style.display = 'flex';
+});
+
+// Close popover
+closeBtn.addEventListener('click', () => {
+  popover.style.display = 'none';
+});
+
+// Close popover when clicking outside
+popover.addEventListener('click', (e) => {
+  if (e.target === popover) {
+    popover.style.display = 'none';
+  }
+});
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    popover.style.display = 'none';
+  }
 });
 
 // Function that will return the prompt based on the mode the user has selected:
@@ -108,6 +136,10 @@ async function runAI() {
 
         if (result) {
             output.innerText = result;
+            // Trigger animation (remove and re-add class to restart it)
+            output.classList.remove('fade-in');
+            void output.offsetWidth; // Trigger reflow to restart animation
+            output.classList.add('fade-in');
         } else {
             errorMSG.innerText = 'No response from API';
             errorMSG.removeAttribute('hidden');
@@ -125,12 +157,14 @@ async function runAI() {
 // Copying the result: adding an event listener to copy btn
 copyBtn.addEventListener('click', (e) => {
     const textToCopy = output.innerText;
-    if (textToCopy !== 'Your result will appear here.') {
+    if (textToCopy && textToCopy !== 'Your result will appear here.') {
         navigator.clipboard.writeText(textToCopy);
         const originalText = copyBtn.innerText;
         copyBtn.innerText = 'Copied ✓';
+        copyBtn.classList.add('success');
         setTimeout(() => {
             copyBtn.innerText = originalText;
+            copyBtn.classList.remove('success');
         }, 2000);
     }
 })

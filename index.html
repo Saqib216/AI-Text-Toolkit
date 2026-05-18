@@ -30,7 +30,44 @@
                     <option value="extract-points">Extract Points</option>
                 </select>
 
-                <input type="password" id="api-key" placeholder="Paste Your Anthropic API key">
+                <input type="password" id="api-key" placeholder="Paste Your Google API key here...">
+                <span id="help-procedure-toggler">Need Help?</span>
+                <!-- Popover: -->
+                <div class="popover" id="popover" style="display: none;">
+                    <div class="popover-procedure">
+                        <button class="close-btn" id="close-btn">✕</button>
+
+                        <h3>Get Your API Key in 1 Minute</h3>
+
+                        <ol class="steps">
+                            <li>
+                                <strong>Go to:</strong>
+                                <a href="https://aistudio.google.com" target="_blank" rel="noopener noreferrer">
+                                    aistudio.google.com
+                                </a>
+                            </li>
+                            <li>
+                                <strong>Sign in</strong> with your Google account
+                            </li>
+                            <li>
+                                <strong>Click:</strong> "Get API Key" button (in the left side panel)
+                            </li>
+                            <li>
+                                <strong>Click:</strong> "Create API key"
+                            </li>
+                            <li>
+                                <strong>Copy</strong> the long key that appears
+                            </li>
+                            <li>
+                                <strong>Paste</strong> it in the input field above
+                            </li>
+                        </ol>
+
+                        <p class="note">
+                            ⚠️ <strong>Keep it private!</strong> Don't share your key with anyone.
+                        </p>
+                    </div>
+                </div>
                 <button id="run-btn">Run</button>
             </div>
 
@@ -52,7 +89,6 @@
 
     </main>
 
-    <script src="js/config.js"></script>
     <script src="js/script.js"></script>
 </body>
 
