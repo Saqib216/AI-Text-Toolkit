@@ -156,7 +156,7 @@ async function runAI() {
 
 // Copying the result: adding an event listener to copy btn
 copyBtn.addEventListener('click', (e) => {
-    const textToCopy = output.innerText;
+    const textToCopy = output.innerText.trim();
     if (textToCopy && textToCopy !== 'Your result will appear here.') {
         navigator.clipboard.writeText(textToCopy);
         const originalText = copyBtn.innerText;
