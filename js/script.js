@@ -22,26 +22,26 @@ textBox.addEventListener('input', (e) => {
 
 // Open popover
 helpBtn.addEventListener('click', () => {
-  popover.style.display = 'flex';
+    popover.style.display = 'flex';
 });
 
 // Close popover
-closeBtn.addEventListener('click', () => {
-  popover.style.display = 'none';
+closeBtn.addEventListener('click', (e) => {
+    popover.style.display = 'none';
 });
 
 // Close popover when clicking outside
 popover.addEventListener('click', (e) => {
-  if (e.target === popover) {
-    popover.style.display = 'none';
-  }
+    if (e.target === popover) {
+        popover.style.display = 'none';
+    }
 });
 
 // Close on Escape key
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape') {
-    popover.style.display = 'none';
-  }
+    if (e.key === 'Escape') {
+        popover.style.display = 'none';
+    }
 });
 
 // Function that will return the prompt based on the mode the user has selected:
