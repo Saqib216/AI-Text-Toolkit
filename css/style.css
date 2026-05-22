@@ -195,41 +195,50 @@ header p {
     justify-content: center;
 }
 
+/* --- NEW POP-OVER PROCEDURE CONTAINER --- */
 .popover-procedure {
-    background: #000000;
-    border-radius: 12px;
+    background: var(--bg-card);
+    border: 1px solid var(--border); 
+    border-radius: 16px;
     padding: 30px;
     max-width: 500px;
     width: 90%;
-    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.6); 
     position: relative;
+    color: var(--text-primary);
 }
 
 .close-btn {
     position: absolute;
-    top: 15px;
-    right: 15px;
+    top: 20px;
+    right: 20px;
     background: none;
     border: none;
-    font-size: 24px;
+    font-size: 22px;
     cursor: pointer;
-    color: #999;
-    transition: color 0.2s;
+    color: var(--text-secondary); 
+    transition: var(--transition);
 }
 
 .close-btn:hover {
-    color: #d9d9d9;
+    color: var(--error); 
+    transform: rotate(90deg); 
 }
 
 .popover-procedure h3 {
     margin: 0 0 20px 0;
-    font-size: 18px;
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-primary);
+    border-bottom: 1px solid var(--border); 
+    padding-bottom: 10px;
 }
 
 .steps {
     padding-left: 20px;
     line-height: 1.8;
     margin: 20px 0;
+    color: var(--text-secondary); 
 }
 
 .steps li {
@@ -237,28 +246,31 @@ header p {
     font-size: 14px;
 }
 
+/* Bold parts inside steps */
 .steps strong {
-    color: #ff5f6dfa;
+    color: var(--text-primary); 
 }
 
 .steps a {
-    color: #4285f4;
+    color: var(--accent); 
     text-decoration: none;
     font-weight: 600;
+    transition: var(--transition);
 }
 
 .steps a:hover {
+    color: var(--accent-hover);
     text-decoration: underline;
 }
 
 .note {
-    background: #1c1708;
+    background: rgba(255, 95, 109, 0.1); 
     padding: 12px;
-    border-radius: 6px;
+    border-radius: var(--border-radius); 
     font-size: 13px;
-    color: #856404;
+    color: var(--error); 
     margin-top: 20px;
-    border-left: 4px solid #ffc107;
+    border-left: 4px solid var(--error); 
 }
 
 .row-flex {
