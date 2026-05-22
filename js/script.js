@@ -135,7 +135,7 @@ async function runAI() {
         const result = data.candidates[0].content.parts[0].text;
 
         if (result) {
-            output.innerText = result;
+            output.innerHTML = marked.parse(result);
             // Trigger animation (remove and re-add class to restart it)
             output.classList.remove('fade-in');
             void output.offsetWidth; // Trigger reflow to restart animation
