@@ -119,7 +119,7 @@ header p {
     background: var(--accent);
     font-size: large;
     font-weight: 600;
-    font-family: var(--accent);
+    font-family: var(--font-family);
     cursor: pointer;
     transition: var(--transition);
 }
@@ -342,6 +342,26 @@ footer a:hover {
     to {
         opacity: 1;
         transform: translateY(0);
+    }
+}
+
+/* Media Query for Mobile and Tablets */
+@media (max-width: 768px) {
+    .columns {
+        flex-direction: column; 
+        padding: 15px;
+    }
+
+    header h1 {
+        font-size: 30px; 
+    }
+
+    .input-side, .output-side {
+        padding: 20px; 
+    }
+
+    #output{
+        white-space: unset;
     }
 }
 
