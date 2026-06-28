@@ -142,7 +142,7 @@ header p {
 
 #run-btn:hover {
     background-color: var(--accent-hover);
-    transform: translateY(-1px);
+    /* transform: translateY(-1px); */
 }
 
 #api-key {
