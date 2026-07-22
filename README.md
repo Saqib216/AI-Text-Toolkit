@@ -4,7 +4,7 @@ A sleek, AI-powered text utility built with vanilla HTML, CSS, and JavaScript. P
 
 ## 🌐 Live Demo
 
-[ai-text-toolkit.netlify.app](https://ai-text-toolkit.netlify.app)
+[ai-text-toolkit-opal.vercel.app](https://ai-text-toolkit-opal.vercel.app/)
 
 ## 📋 Project Overview
 
@@ -42,7 +42,7 @@ A single-page web app that leverages Google's Gemini 2.5 Flash API to process te
 - **Frontend:** HTML5, CSS3, Vanilla JavaScript (ES6+)
 - **AI API:** Google Gemini 2.5 Flash 
 - **Markdown Parser:** Marked.js CDN
-- **Hosting:** Netlify
+- **Hosting:** Vercel
 - **API Auth:** User provides their own Google API key
 
 ---
