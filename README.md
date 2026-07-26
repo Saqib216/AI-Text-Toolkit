@@ -333,7 +333,7 @@ Building this project teaches you:
 ## 📧 Contact
 
 - **GitHub:** [github.com/Saqib216](https://github.com/Saqib216)
-- **Portfolio:** [saqib-portfo.netlify.app](https://saqib-portfo.netlify.app)
+- **Portfolio:** [saqib-hussnain.vercel.app](https://saqib-hussnain.vercel.app)
 - **Instagram:** [@itx.saqib.hussnain](https://instagram.com/itx.saqib.hussnain)
 - **LinkedIn:** [saqib-hussnain](https://linkedin.com/in/saqib-hussnain)
 ---
