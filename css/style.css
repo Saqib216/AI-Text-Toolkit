@@ -480,6 +480,11 @@ footer a:hover {
     }
 }
 
+@keyframes wordIn {
+    from { opacity: 0; transform: translateY(4px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
 /* Media Query for Mobile and Tablets */
 @media (max-width: 768px) {
     .columns {
@@ -526,6 +531,41 @@ footer a:hover {
     0%, 80%, 100% { opacity: 0.3; transform: scale(0.8); }
     40% { opacity: 1; transform: scale(1.2); }
 }
+
+#output h1, #output h2, #output h3 {
+    font-family: 'Zodiak', serif;
+    font-weight: 400;
+    margin: 16px 0 8px;
+    color: var(--text-primary);
+}
+
+/* Output typography */
+
+#output h1 { font-size: 24px; }
+#output h2 { font-size: 20px; }
+#output h3 { font-size: 17px; }
+
+#output p { margin-bottom: 10px; line-height: 1.6; }
+
+#output ul, #output ol {
+    padding-left: 22px;
+    margin-bottom: 10px;
+}
+
+#output li { margin-bottom: 6px; line-height: 1.5; }
+
+#output strong { color: var(--text-primary); font-weight: 600; }
+
+#output code {
+    font-family: 'JetBrains Mono', monospace;
+    background: rgba(124, 106, 255, 0.12);
+    color: var(--accent-hover);
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+
+#output > *:first-child { margin-top: 0; }
 
 /* Scrollbar */
 ::-webkit-scrollbar {

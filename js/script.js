@@ -71,6 +71,29 @@ function buildPrompt(pastedText, mode) {
     }
 }
 
+function typeWriterEffect(rawText) {
+    const html = marked.parse(rawText);
+    output.innerHTML = html;
+    output.classList.add('fade-in');
+
+    // Get all text nodes and reveal them progressively
+    const words = output.innerText.split(' ');
+    output.style.opacity = '0';
+
+    requestAnimationFrame(() => {
+        output.style.opacity = '1';
+        const walker = document.createTreeWalker(output, NodeFilter.SHOW_ELEMENT);
+        let el;
+        let i = 0;
+        while (el = walker.nextNode()) {
+            el.style.animation = `wordIn 0.4s ease forwards`;
+            el.style.animationDelay = `${i * 0.03}s`;
+            el.style.opacity = '0';
+            i++;
+        }
+    });
+}
+
 async function runAI() {
     const textOfTextBox = textBox.value;
     const selectedMode = modesSelect.value;
@@ -135,11 +158,7 @@ async function runAI() {
         const result = data.candidates[0].content.parts[0].text;
 
         if (result) {
-            output.innerHTML = marked.parse(result);
-            // Trigger animation (remove and re-add class to restart it)
-            output.classList.remove('fade-in');
-            void output.offsetWidth; // Trigger reflow to restart animation
-            output.classList.add('fade-in');
+            typeWriterEffect(result);
         } else {
             errorMSG.innerText = 'No response from API';
             errorMSG.removeAttribute('hidden');
