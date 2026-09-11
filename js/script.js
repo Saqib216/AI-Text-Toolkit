@@ -160,12 +160,12 @@ copyBtn.addEventListener('click', (e) => {
     if (textToCopy && textToCopy !== 'Your result will appear here.') {
         navigator.clipboard.writeText(textToCopy);
         const originalText = copyBtn.innerText;
-        copyBtn.innerText = 'Copied ✓';
-        copyBtn.classList.add('success');
+        copyBtn.textContent = "✓ Copied";
+        copyBtn.classList.add("success");
         setTimeout(() => {
-            copyBtn.innerText = originalText;
-            copyBtn.classList.remove('success');
-        }, 2000);
+            copyBtn.textContent = "Copy";
+            copyBtn.classList.remove("success");
+        }, 1500);
     }
 })
 
