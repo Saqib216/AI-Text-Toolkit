@@ -45,17 +45,54 @@ body {
 
 header {
     text-align: center;
-    padding: 10px 0;
+    padding: 60px 0 30px;
+    animation: heroIn 0.7s ease-out;
+}
+
+.kicker {
+    display: inline-block;
+    font-family: var(--font-family);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--accent-hover);
+    background: rgba(124, 106, 255, 0.1);
+    border: 1px solid rgba(124, 106, 255, 0.25);
+    padding: 6px 14px;
+    border-radius: 100px;
+    margin-bottom: 18px;
 }
 
 header h1 {
-    color: var(--text-primary);
-    font-size: 40px;
+    font-family: 'Zodiak', serif;
+    font-weight: 400;
+    font-size: 56px;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    background: linear-gradient(135deg, #ffffff 30%, #b8b3ff 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
 }
 
 header p {
     color: var(--text-secondary);
-    font-size: 16px;
+    font-size: 17px;
+    margin-top: 14px;
+    font-weight: 400;
+}
+
+@keyframes heroIn {
+    from {
+        opacity: 0;
+        transform: translateY(-12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 .columns {
@@ -425,7 +462,7 @@ footer a:hover {
     }
 
     header h1 {
-        font-size: 30px;
+        font-size: 34px;
     }
 
     .input-side,
