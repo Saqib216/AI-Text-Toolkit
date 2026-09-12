@@ -17,7 +17,9 @@ const popover = document.getElementById('popover');
 // Adding an event listener to the textarea
 textBox.addEventListener('input', (e) => {
     let textLength = textBox.value.length;
-    charCount.innerText = `${textLength}/${maxLengthOfTextBox}`;
+    charCount.textContent = `${textLength}/${maxLengthOfTextBox}`;
+    const percent = (textLength / maxLengthOfTextBox) * 100;
+    charCount.classList.toggle('near-limit', percent > 80);
 });
 
 // Open popover
